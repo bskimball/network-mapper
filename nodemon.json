@@ -1,0 +1,3 @@
+{
+  "ignore": ["client/*.*", "logs/*.*", "README.md"]
+}

@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: theme("colors.gray.100");
+  color: theme("colors.gray.900");
+  transition: background-color 150ms ease-in, color 150ms ease-in;
+  &.dark {
+    background-color: theme("colors.gray.900");
+    color: white;
+  }
+}
+
+.button {
+  padding: theme("padding.1") theme("padding.3");
+  border-radius: theme("borderRadius.DEFAULT");
+  background-color: theme("colors.gray.100");
+  transition: background-color 0.15s ease-in;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: theme("colors.gray.300");
+  }
+  &.primary {
+    background-color: theme("colors.blue.600");
+    color: theme("colors.white");
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: theme("colors.blue.700");
+    }
+  }
+  &.accent {
+    background-color: theme("colors.cyan.500");
+    color: theme("colors.white");
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: theme("colors.cyan.500");
+    }
+  }
+  &.slate {
+    background-color: theme("colors.slate.800");
+    color: theme("colors.white");
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: theme("colors.slate.900");
+    }
+  }
+  &.danger {
+    background-color: theme("colors.red.500");
+    color: theme("colors.white");
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: theme("colors.red.600");
+  }
+}
+
+.dropdown {
+  box-shadow: theme("boxShadow.xl");
+  border-radius: theme("borderRadius.DEFAULT");
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid theme("colors.slate.200");
+}
+
+.dark {
+  .dropdown {
+    background-color: theme("colors.slate.800");
+    border: 1px solid theme("colors.slate.900");
+  }
+}
+
+.form-input {
+  border-radius: theme("borderRadius.DEFAULT");
+  padding: theme("padding.2");
+  line-height: 1.25rem;
+  color: theme("colors.slate.700");
+  width: 100%;
+
+  border-color: transparent;
+  &:focus {
+    outline: none;
+    border: 1px solid theme("colors.blue.300");
+    color: black;
+    box-shadow: 0 0 0 2px theme("colors.blue.300");
+  }
+}
+
+.dark {
+  .form-input {
+    background-color: theme('colors.slate.800');
+    color: theme('colors.slate.200');
+  }
+  &:focus {
+    outline: none;
+    border: 1px solid theme("colors.blue.300");
+    box-shadow: 0 0 0 2px theme("colors.blue.300");
+  }
+}
+
+.radio-input {
+  border-radius: theme("borderRadius.full");
+  border: 1px solid theme("colors.black");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &[data-focus] {
+    outline: none;
+    border: 1px solid theme("colors.blue.300");
+    color: black;
+    box-shadow: 0 0 0 2px theme("colors.blue.300");
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  background-color: theme("colors.black");
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.modal {
+  &.underlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: theme("borderRadius.DEFAULT");
+    box-shadow: theme("boxShadow.2xl");
+    background-color: theme("colors.white");
+    padding: 1.5rem;
+  }
+}
+
+.dark {
+  .modal {
+    .display {
+      background-color: theme("colors.slate.800");
+    }
+  }
+}
+
+.card {
+  box-shadow: theme("boxShadow.xl");
+  border-radius: theme("borderRadius.DEFAULT");
+  padding: theme("padding.4");
+  background-color: theme("colors.white");
+  border: 1px solid theme("colors.slate.100");
+}
+
+.dark {
+  .card {
+    background-color: theme("colors.slate.800");
+    border: 1px solid theme("colors.slate.700");
+  }
+}
+
+[data-part="arrow"] {
+  --arrow-background: theme("colors.white");
+  --arrow-size: 0.5rem;
+}
+
+.dark {
+  [data-part="arrow"] {
+    --arrow-background: theme("colors.slate.700");
+  }
+}
